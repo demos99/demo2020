@@ -3,17 +3,14 @@
 
 <article>
   <header>
-	<h1>LEARNING LATENT REPRESENTATIONS FOR STYLE CONTROL AND TRANSFER IN END-TO-END SPEECH SYNTHESIS</h1>
+	<h1>LEARNING DEEP AND WIDE CONTEXTUAL REPRESENTATIONS USING BERT FOR STATISTICAL PARAMETRIC SPEECH SYNTHESIS</h1>
   </header>
 </article>
 
-<p><b>Authors:</b> Ya-Jie Zhang, Shifeng Pan, Lei He, Zhen-Hua Ling </p>
+<p><b>Authors:</b> Ya-Jie Zhang, Zhen-Hua Ling </p>
 
-<div><b>Abstract:</b> In this paper, we introduce the Variational Autoencoder (VAE) to an end-to-end speech synthesis model, to learn the latent representation of speaking styles in an unsupervised manner.
-The style representation learned through VAE shows good properties such as disentangling, scaling, and combination, which makes it easy for style control.
-Style transfer can be achieved in this framework by first inferring style representation through the recognition network of VAE, then feeding it into TTS network to guide the style in synthesizing speech.
-To avoid Kullback-Leibler (KL) divergence collapse in training, several techniques are adopted. 
-Finally, the proposed model shows good performance of style control and outperforms Global Style Token (GST) model in ABX preference tests on style transfer.
+<div><b>Abstract:</b> In this paper, we propose a method of learning deep and wide contextual representations for statistical parametric speech synthesis (SPSS) using BERT, a pre-trained language representation model. Traditional acoustic models in SPSS utilize phoneme sequences and prosody labels as text input, and can not make full use of the deep linguistic representations of current and surrounding sentences. Therefore, this paper designs two context encoders, i.e., a sentence-window context encoder and a paragraph-level context encoder, to integrate the deep contextual representations extracted from multiple sentences by BERT into the Tacotron framework via an extra attention module. The parameters of BERT are pre-trained and then fine-tuned together with other components in the model. Experimental results on the Blizzard Challenge 2019 datastet show that both context encoders can reduce the prediction errors of acoustic features. The sentence-window context encoder improves the subjective performance of the baseline Tacotron model significantly.
+
 </div>
 
 <p><b>Paper link:</b> </p>
@@ -25,8 +22,7 @@ Finally, the proposed model shows good performance of style control and outperfo
 </head>
 
 <body>
-<h2>Style control</h2></a>
-<h3>1. Interpolation</h3></a>
+
 
  	
 
