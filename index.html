@@ -9,64 +9,48 @@
 
 <p><b>Authors:</b> Ya-Jie Zhang, Zhen-Hua Ling </p>
 
-<div><b>Abstract:</b> In this paper, we propose a method of learning deep and wide contextual representations for statistical parametric speech synthesis (SPSS) using BERT, a pre-trained language representation model. Traditional acoustic models in SPSS utilize phoneme sequences and prosody labels as text input, and can not make full use of the deep linguistic representations of current and surrounding sentences. Therefore, this paper designs two context encoders, i.e., a sentence-window context encoder and a paragraph-level context encoder, to integrate the deep contextual representations extracted from multiple sentences by BERT into the Tacotron framework via an extra attention module. The parameters of BERT are pre-trained and then fine-tuned together with other components in the model. Experimental results on the Blizzard Challenge 2019 datastet show that both context encoders can reduce the prediction errors of acoustic features. The sentence-window context encoder improves the subjective performance of the baseline Tacotron model significantly.
+<div><b>Abstract:</b> In this paper, we propose a method of learning deep and wide contextual representations for statistical parametric speech synthesis (SPSS) using BERT, a pre-trained language representation model. Traditional acoustic models in SPSS utilize phoneme sequences and prosody labels as text input, and can not make full use of the deep linguistic representations of current and surrounding sentences. Therefore, this paper designs two context encoders, i.e., a sentence-window context encoder and a paragraph-level context encoder, to integrate the deep contextual representations extracted from multiple sentences by BERT into the baseline framework via an extra attention module. The parameters of BERT are pre-trained and then fine-tuned together with other components in the model. Experimental results on the Blizzard Challenge 2019 datastet show that both context encoders can reduce the prediction errors of acoustic features. Both context encoders improve the subjective performance of the baseline baseline model significantly.
 
 </div>
 
-<h3>Demos</h3></a>
+<h3>(1) Demos of different models</h3></a>
     <div>
-    The Blizzard Challenge 2019 dataset was adopted in our experiments. We use the Griffin-Lim algorithm to reconstruct waveforms. The following demos show nature speech and the generated speech of Baseline model, SW models and PL model in test set.
+    The Blizzard Challenge 2019 dataset was adopted in our experiments. We use WaveNet vocoder to reconstruct waveforms. The following demos show nature speech and the generated speech of Baseline model, SW models and PL model in test set.
     </div>
 
 
-   	<div>1. <i>那什么时候有机会打破规矩呢，就是三种情况啊，第一种，连接的成本已经很低，</i> </div>
+   	<div>1. <i>都是这种情况，他们很难顺畅地读书，但是事业都非常成功。</i> </div>
 
     <blockquote>
     <table>
     <tr>
-    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=1, woPE)</td> <td align=center width=300>SW(K=1, wPE)</td><td align=center width=300>PL</td>
+    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=0)</td> <td align=center width=300>SW(K=1)</td><td align=center width=300>PL</td>
     </tr>
     <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/nature/2.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/tacotron/2.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_woPE/2.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_PE/2.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/PL/2.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/nature/3.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/baseline/3.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/SW_k0/3.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/SW_k1/3.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/PL/3.wav" controls=""></audio></td>
     </tr>
     </table>	
     </blockquote> 
-
-   	<div>2. <i>举个例子啊今年中秋的时候不少公司给我寄月饼。</i> </div>
-
-    <blockquote>
-    <table>
-    <tr>
-    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=1, woPE)</td> <td align=center width=300>SW(K=1, wPE)</td><td align=center width=300>PL</td>
-    </tr>
-    <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/nature/0.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/tacotron/0.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_woPE/0.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_PE/0.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/PL/0.wav" controls=""></audio></td>
-    </tr>
-    </table>	
-    </blockquote>   
+  
 
 
-   	<div>3. <i>规矩的作用啊本质上是降低人和人之间连接的成本的。</i> </div>
+   	<div>2. <i>说这事啊，当时演讲现场是一片不太相信的表情，觉得这是小儿科的想象。</i> </div>
 
     <blockquote>
     <table>
     <tr>
-    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=1, woPE)</td> <td align=center width=300>SW(K=1, wPE)</td><td align=center width=300>PL</td>
+    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=0)</td> <td align=center width=300>SW(K=1)</td><td align=center width=300>PL</td>
     </tr>
     <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/nature/1.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/tacotron/1.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_woPE/1.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_PE/1.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/PL/1.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/nature/13.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/baseline/13.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/SW_k0/13.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/SW_k1/13.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/PL/13.wav" controls=""></audio></td>
     </tr>
     </table>	
     </blockquote>   
@@ -74,111 +58,75 @@
   
 
 
-   	<div>4. <i>那最后一种情况呢，连接的规模扩大了，</i> </div>
+   	<div>3. <i>这个时候丘吉尔说了一句名言，这不是结束甚至不是结束的开始，而可能只是开始的结束。</i> </div>
 
     <blockquote>
     <table>
     <tr>
-    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=1, woPE)</td> <td align=center width=300>SW(K=1, wPE)</td><td align=center width=300>PL</td>
+    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=0)</td> <td align=center width=300>SW(K=1)</td><td align=center width=300>PL</td>
     </tr>
     <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/nature/3.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/tacotron/3.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_woPE/3.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_PE/3.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/PL/3.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/nature/18.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/baseline/18.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/SW_k0/18.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/SW_k1/18.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/PL/18.wav" controls=""></audio></td>
     </tr>
     </table>	
     </blockquote>   
 
 
-   	<div>5. <i>关键是看我们能不能抓住三个关键时机，也就是规矩没用啦，连接改变了，和规模扩大了。</i> </div>
+    <div>4. <i>因为这件事的长期影响力就要开始发挥了嘛。</i> </div>
 
     <blockquote>
     <table>
     <tr>
-    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=1, woPE)</td> <td align=center width=300>SW(K=1, wPE)</td><td align=center width=300>PL</td>
+    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=0)</td> <td align=center width=300>SW(K=1)</td><td align=center width=300>PL</td>
     </tr>
     <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/nature/4.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/tacotron/4.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_woPE/4.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_PE/4.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/PL/4.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/nature/19.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/baseline/19.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/SW_k0/19.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/SW_k1/19.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/PL/19.wav" controls=""></audio></td>
     </tr>
-    </table>	
-    </blockquote>   
+    </table>    
+    </blockquote> 
 
 
-   	<div>6. <i>做有效的事可能你不擅长但是有结果，而做有效率的事可能你擅长但是没意义呀。</i> </div>
+
+<h3>(2) Compare different context in SW(K=1) model</h3></a>
+
+    <div>
+    In Session 4.4, three different kinds of context input of SW context encoder were used to verify the effect of different contextual sentences on SW(K=1) model. The sentense in red is target sentence.
+
+    </div>
+
+    <div>1. <i>true context</i> :规矩的作用啊本质上是降低人和人之间连接的成本的。<span>那什么时候有机会打破规矩呢，就是三种情况啊，第一种，连接的成本已经很低，</span>啊比如在家里，两口子之间立的那些规矩，他就不容易长期保持，所谓清官难断家务事也就是这个原因。</div>
+    <div > &ensp; <i>other context</i> : 但伊凡的一番话让格伦放了心，并给安娜一本魔法书，格伦放心的把安娜交给伊凡，安娜加入队伍。<span>那什么时候有机会打破规矩呢，就是三种情况啊，第一种，连接的成本已经很低，</span>其实，这些语法掌握了也有助于阅读，用在作文中也同样精彩。</div>    
+    <div > &ensp; <i>random context</i> : 但以的好然果起容止人子怕本一差其但代没。益才了论上们这仄吃到必要物。有。<span>那什么时候有机会打破规矩呢，就是三种情况啊，第一种，连接的成本已经很低，<span> 骚，门业时话斯企看一广反它年啊有等因利具被个了识专无。到了是专奈个都不。</div> 
+
+    <style>
+        span {
+                color: red;
+            }
+    </style>
 
     <blockquote>
     <table>
     <tr>
-    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=1, woPE)</td> <td align=center width=300>SW(K=1, wPE)</td><td align=center width=300>PL</td>
+    <td align=center width=300>nature speech</td><td align=center width=300>true context</td><td align=center width=300>other context</td><td align=center width=300>random context</td> 
     </tr>
     <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/nature/5.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/tacotron/5.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_woPE/5.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_PE/5.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/PL/5.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/context/10015803_00.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/context/10015803_00_right.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/context/10015803_00_other.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/context/10015803_00_random.wav" controls=""></audio></td>
     </tr>
-    </table>	
-    </blockquote>   
+    </table>    
+    </blockquote>
 
 
-   	<div>7. <i>这有啥区别呢。</i> </div>
-
-    <blockquote>
-    <table>
-    <tr>
-    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=1, woPE)</td> <td align=center width=300>SW(K=1, wPE)</td><td align=center width=300>PL</td>
-    </tr>
-    <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/nature/6.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/tacotron/6.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_woPE/6.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_PE/6.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/PL/6.wav" controls=""></audio></td>
-    </tr>
-    </table>	
-    </blockquote>   
-
-
-   	<div>8. <i>不是嫌月饼便宜呀，而是你浓眉大眼的居然一点创意也没有。</i> </div>
-
-    <blockquote>
-    <table>
-    <tr>
-    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=1, woPE)</td> <td align=center width=300>SW(K=1, wPE)</td><td align=center width=300>PL</td>
-    </tr>
-    <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/nature/7.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/tacotron/7.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_woPE/7.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_PE/7.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/PL/7.wav" controls=""></audio></td>
-    </tr>
-    </table>	
-    </blockquote>   
-
-   	<div>9. <i>哎要回答这个问题就得知道，我们的那些规矩到底是干什么用的。</i> </div>
-
-    <blockquote>
-    <table>
-    <tr>
-    <td align=center width=300>nature speech</td><td align=center width=300>Baseline</td><td align=center width=300>SW(K=1, woPE)</td> <td align=center width=300>SW(K=1, wPE)</td><td align=center width=300>PL</td>
-    </tr>
-    <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/nature/8.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/tacotron/8.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_woPE/8.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/SW_PE/8.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2020/PL/8.wav" controls=""></audio></td>
-    </tr>
-    </table>	
-    </blockquote>   
 
 
 <head>
