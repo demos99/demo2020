@@ -98,13 +98,18 @@
 <h3>(2) Compare different context in SW(K=1) model</h3></a>
 
     <div>
-    In Session 4.4, three different kinds of context input of SW context encoder were used to verify the effect of different contextual sentences on SW(K=1) model. The sentence in red is target sentence. The following demos correspond to Fig. 2 and Fig. 3 in the paper.
+    In Session 4.4, in order to further analysis the effects of the <strong>SW(K=1)</strong> model on utilizing contextual sentences, three different kinds of context input were compared by experiments. The sentence in red is target sentence and sentences in black are contextual sentences. The following demos correspond to Fig. 2 and Fig. 3 in the paper.
 
     </div>
 
-    <div>1. <i><strong>true context</strong></i> : 规矩的作用啊本质上是降低人和人之间连接的成本的。<span>那什么时候有机会打破规矩呢，就是三种情况啊，第一种，连接的成本已经很低，</span>啊比如在家里，两口子之间立的那些规矩，他就不容易长期保持，所谓清官难断家务事也就是这个原因。</div>
-    <div > &ensp; <i><strong>other context</strong></i> : 但伊凡的一番话让格伦放了心，并给安娜一本魔法书，格伦放心的把安娜交给伊凡，安娜加入队伍。<span>那什么时候有机会打破规矩呢，就是三种情况啊，第一种，连接的成本已经很低，</span>其实，这些语法掌握了也有助于阅读，用在作文中也同样精彩。</div>    
-    <div > &ensp; <i><strong>random context</strong></i> : 但以的好然果起容止人子怕本一差其但代没。益才了论上们这仄吃到必要物。有。<span>那什么时候有机会打破规矩呢，就是三种情况啊，第一种，连接的成本已经很低，</span>骚，门业时话斯企看一广反它年啊有等因利具被个了识专无。到了是专奈个都不。</div> 
+<h4>1) demos </h4></a>
+
+    <div>1. <i><strong>true context</strong></i> : 规矩的作用啊本质上是降低人和人之间连接的成本的。<span>那什么时候有机会打破规矩呢，就是三种情况啊，第一种，连接的成本已经很低，</span>啊比如在家里，两口子之间立的那些规矩，他就不容易长期保持，所谓清官难断家务事也就是这个原因。
+        (English translation: The role of rules is essentially to reduce the cost of connection between people.<span> When will there be a chance to break the rules? There are three situations. First, the cost of connection is already very low.</span> For example, the rules established between husband and wife are not easy to maintain for a long time. This is so-called that even an upright official finds it hard to settle a family quarrel. )</div>
+    <div > &ensp; <i><strong>other context</strong></i> : 但伊凡的一番话让格伦放了心，并给安娜一本魔法书，格伦放心的把安娜交给伊凡，安娜加入队伍。<span>那什么时候有机会打破规矩呢，就是三种情况啊，第一种，连接的成本已经很低，</span>其实，这些语法掌握了也有助于阅读，用在作文中也同样精彩。
+        (English translation: But Evan’s words reassured Glen and Evan gave Anna a magic book. Glen allowed that Anna could go with Evan and Anna joined the team.<span> When will there be a chance to break the rules? There are three situations. First, the cost of connection is already very low.</span> In fact, mastering these grammars is also helpful for reading, and it is also beneficial to use them in composition.)</div>    
+    <div > &ensp; <i><strong>random context</strong></i> : 但以的好然果起容止人子怕本一差其但代没。益才了论上们这仄吃到必要物。有。<span>那什么时候有机会打破规矩呢，就是三种情况啊，第一种，连接的成本已经很低，</span>骚，门业时话斯企看一广反它年啊有等因利具被个了识专无。到了是专奈个都不。
+        (English translation: [random character sequences]<span> When will there be a chance to break the rules? There are three situations. First, the cost of connection is already very low.</span> [random character sequences]])</div> 
 
     <style>
         span {
@@ -126,7 +131,18 @@
     </table>    
     </blockquote>
 
+<h4>2) figures </h4></a>  
+    <div>
+    The following figures show the average attention probabilities of one sentence which corresponding to Fig.2 in the paper. In these figures, the attention probabilities and their corresponding characters are shown one-on-one.
 
+    </div>
+
+    <div>(a) true context.</div>
+    <embed src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/right_cropped.pdf" width="500" height="450" ></embed>
+    <div>(b) other context.</div>
+    <embed src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/other_cropped.pdf" width="500" height="450" ></embed>
+    <div>(c) random context.</div>
+    <embed src="http://home.ustc.edu.cn/~zyj008/Interspeech2020/unigram_cropped.pdf" width="500" height="450" ></embed>
 
 
 <head>
